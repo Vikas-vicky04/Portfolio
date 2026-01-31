@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile card</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:rgb(245, 234, 220);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+        .card{
+            background-color: lightgrey;
+            border-radius: 15px;
+            border:2px solid black;
+            width: 350px;
+            padding:30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgb(0,0,0,0,2);
+            animation:fadeln 1s ease forwords;
+        }
+        .card img{
+            width:120px;
+            height:120px;
+            border-radius: 50%;
+            border:3px solid black;
+            object-fit: cover;
+            animation:popln 0.8s ease forwards;
+            cursor:pointer;
+        }
+        .card h2{
+            margin: 15px 0 5px 0;
+            font-size: 22px;
+            color:black;
+        }
+        .card h4{
+            margin:0 5px 0 5px;
+            font-weight: normal;
+            color: black;
+        }
+        .card p{
+            font-size: 14px;
+            color:rgb(0,0,23);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .skill{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:8px;
+            margin-bottom: 25px;
+        }
+        .skill span{
+            background-color: rgb(132, 151, 195);
+            color:rgb(129, 225, 218);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            transition: transform 0.3s,background-color 0.3s;
+            cursor: pointer;
+        }
+        .skill span:hover{
+            transform:scale(1.1);
+            background-color: #23d7ff;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .btns bottom{
+            padding:8px 16px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s,background-color 0.3s;
+        }
+        .btn-contact{
+            background-color: rgb(39, 212, 227);
+            color: rgb(0, 0, 0);
+            border-radius: 7px;
+        }
+        .btn-contact:hover{
+            background-color: chocolate;
+            transform: scale(1.02);
+            border-radius: 15px;
+        }
+        .btn-cv{
+            background-color: rgb(117, 220, 238);
+            color: rgb(0,0,0);
+            border-radius: 7px;
+        }
+            .btn-cv:hover{
+                background-color: rgb(164, 217, 235);
+                transform: scale(1.05);
+                border-radius: 15px;
+            }
+        .footer{
+            display:flex ;
+            justify-content: space-between;
+            font-size: 12px;
+            color: black;
+            margin-top:10px;
+        }
+        @keyframes fadIn{
+            from{opacity: 0;transform:translateY(2px);}
+            to{opacity: 1;transform: translateY(0);}
+        }
+        @keyframes popIn{
+             from{opacity: 0;transform:scale(0.5);}
+            to{opacity: 1;transform: scale(1);}
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="i3.jpg.jpeg" alt="profile photo" >
+        <h2>VIKAS B</h2>
+        <h4>BACHALOR OF COMPUTER APPLICATION </h4>
+
+        <P>
+            i am a computer scince student in sjr collage.
+            Learning about new technogies always fascinates me.
+            I aspire to build new tech which help solving date-to-day problem.
+        </P>
+
+        <div class="skill">
+            <span>Python programming</span>
+            <span> C AND C++</span>
+            <span> Could computing</span>
+            <span>HTML,CSS</span>
+        </div>
+        <div class="footer">
+            <button class="btn-contact">contact me</button>
+            <button class="btn-cv">Download CV</button>
+        </div>
+        
+
+    </div>
+    <script>
+        document.querySelector(".btn-contact").addEventListener("click",function(){
+        alert("contact details:\n\n Emial:vikasakash44@gmail.com\nphone.no:7795252488");});
+
+        document.querySelector(".btn-cv").addEventListener("click",function(){
+            alert("CV Download will start soon(demo)");});
+
+        let skill=document.querySelectorAll(".skill span");
+        skill.forEach(function(skill){
+            skill.addEventListener("click",function(){
+                alert("SKILLS:"+this.innerText);
+            });
+        });
+
+        document.querySelector(".card img").addEventListener("click",function(){
+            alert("hello welcome to my portfolio!");
+        });
+    </script>
+</body>
+</html>
